@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        				http://www.springframework.org/schema/beans/spring-beans.xsd
+        				http://www.springframework.org/schema/context
+        				http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${datasource.driverClassName}" />
+		<property name="jdbcUrl" value="${datasource.url}" />
+		<property name="user" value="${datasource.username}" />
+		<property name="password" value="${datasource.password}" />
+		<property name="initialPoolSize" value="${datasource.initialPoolSize}" />
+		<property name="minPoolSize" value="${datasource.minPollSize}" />
+		<property name="maxPoolSize" value="${datasource.maxPoolSize}" />
+		<property name="maxIdleTime" value="${datasource.maxIdleTime}" />
+		<property name="acquireIncrement" value="${datasource.acquireIncrement}" />
+		<property name="idleConnectionTestPeriod" value="${datasource.idleConnectionTestPeriod}" />
+		<property name="acquireRetryAttempts" value="${datasource.acquireRetryAttempts}" />
+		<property name="breakAfterAcquireFailure" value="${datasource.breakAfterAcquireFailure}" />
+		<property name="maxStatements" value="${datasource.maxStatements}" />
+		<property name="testConnectionOnCheckout" value="${datasource.testConnectionOnCheckout}" />
+	</bean>
+	<!-- 声明事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- Spring事务template -->
+	<bean id="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+	<!-- 指定MybatisMapper映射文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:mappers/*.xml" />
+	</bean>
+	<!-- 将Dao层映射成Bean -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.tcl.tworking.persistence.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+
+</beans>

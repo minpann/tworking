@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.tcl.tworking</groupId>
+    <artifactId>tworking</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>tworking-admin</artifactId>
+  <packaging>war</packaging>
+  
+  	<dependencies>
+		<dependency>
+			<groupId>com.tcl.tworking</groupId>
+			<artifactId>tworking-biz</artifactId>
+		</dependency>
+	</dependencies>
+	
+		<build>
+		<finalName>tworking</finalName>
+		<plugins>
+			<!-- Jetty容器插件，mvn jetty:run启动容器 -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.10</version>
+				<configuration>
+					<!-- 检测到活动停止后10秒开始热部署，默认为0关闭热部署 -->
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<webAppConfig>
+						<!-- 配置跟路径，访问localhost:8080/ttweb -->
+						<contextPath>/tworking</contextPath>
+					</webAppConfig>
+					<connectors>
+						<!-- 配置监听器，设置监听端口和超时限制 -->
+						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+							<port>8080</port>
+							<maxIdleTime>120000</maxIdleTime>
+						</connector>
+					</connectors>
+				</configuration>
+			</plugin>
+		</plugins>
+		<!-- 资源源文件 -->
+		<filters>
+			<filter>../${enviroment}/serverConfig.properties</filter>
+		</filters>
+		<!-- 被替换文件 -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tworking-webapp:war">
+    <output-path>$PROJECT_DIR$/tworking-webapp/target</output-path>
+    <root id="archive" name="tworking-webapp-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="tworking-webapp:war exploded" />
+    </root>
+  </artifact>
+</component>
