@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.tcl.tworking.persistence.dao.ExampleDao" >
-  <resultMap id="BaseResultMap" type="com.tcl.tworking.persistence.model.Example" >
+<mapper namespace="com.tcl.tworking.persistence.dao.UserDao" >
+  <resultMap id="BaseResultMap" type="com.tcl.tworking.persistence.model.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
@@ -14,27 +14,27 @@
     <select id="getAll" resultMap="BaseResultMap" >
     select 
     <include refid="Base_Column_List" />
-    from example
+    from user
   </select>
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from example
+    from user
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from example
+    delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.tcl.tworking.persistence.model.Example" >
-    insert into example (id, username, address, 
+  <insert id="insert" parameterType="com.tcl.tworking.persistence.model.User" >
+    insert into user (id, username, address, 
       descption)
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
       #{descption,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.tcl.tworking.persistence.model.Example" >
-    insert into example
+  <insert id="insertSelective" parameterType="com.tcl.tworking.persistence.model.User" >
+    insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
@@ -64,8 +64,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.tcl.tworking.persistence.model.Example" >
-    update example
+  <update id="updateByPrimaryKeySelective" parameterType="com.tcl.tworking.persistence.model.User" >
+    update user
     <set >
       <if test="username != null" >
         username = #{username,jdbcType=VARCHAR},
@@ -79,8 +79,8 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.tcl.tworking.persistence.model.Example" >
-    update example
+  <update id="updateByPrimaryKey" parameterType="com.tcl.tworking.persistence.model.User" >
+    update user
     set username = #{username,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       descption = #{descption,jdbcType=VARCHAR}

@@ -21,11 +21,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
 
   <body>
-   <c:forEach var="example" items="${exampleList}">
-       编号：<span>${example.id}</span><br/>
-       姓名：<span>${example.username}</span><br/>
-       地址：<span>${example.address}</span><br/>
-       描述：<span>${example.description}</span><br/>
+   <c:forEach var="user" items="${userList}">
+       编号：<span>${user.id}</span><br/>
+       姓名：<span>${user.username}</span><br/>
+       地址：<span>${user.address}</span><br/>
+       描述：<span>${user.description}</span><br/>
    </c:forEach>
   
   <input id="test" value="jquery">

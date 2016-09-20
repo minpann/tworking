@@ -1,6 +1,6 @@
 package com.tcl.tworking.persistence.model;
 
-public class Example {
+public class User {
 	private int id;
 	
 	private String username;
@@ -43,7 +43,7 @@ public class Example {
 
 	@Override
 	public String toString() {
-		return "Example [id=" + id + ", username=" + username + ", address="
+		return "User [id=" + id + ", username=" + username + ", address="
 				+ address + ", description=" + description + "]";
 	}
 }

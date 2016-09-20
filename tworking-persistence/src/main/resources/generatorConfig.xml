@@ -36,7 +36,7 @@
          />
 
 		<!-- 数据库与与对象映射 -->
-      <table tableName="example" domainObjectName="Example" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"  />
+      <table tableName="user" domainObjectName="User" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"  />
       
  
    </context>
