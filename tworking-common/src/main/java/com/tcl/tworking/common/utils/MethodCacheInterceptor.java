@@ -42,8 +42,8 @@ public class MethodCacheInterceptor implements MethodInterceptor {
 
             // 加载过期时间设置
             defaultCacheExpireTime = Long.valueOf(p.getProperty("defaultCacheExpireTime"));
-            xxxRecordManagerTime = Long.valueOf(p.getProperty("com.service.impl.xxxRecordManager"));
-            xxxSetRecordManagerTime = Long.valueOf(p.getProperty("com.service.impl.xxxSetRecordManager"));
+            xxxRecordManagerTime = Long.valueOf(p.getProperty("com.tcl.tworking.service.impl.xxxRecordManager"));
+            xxxSetRecordManagerTime = Long.valueOf(p.getProperty("com.tcl.tworking.service.impl.xxxSetRecordManager"));
             // 创建list
             targetNamesList = new ArrayList<String>(targetNames.length);
             methodNamesList = new ArrayList<String>(methodNames.length);
@@ -92,9 +92,9 @@ public class MethodCacheInterceptor implements MethodInterceptor {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        if (tkey.startsWith("com.service.impl.xxxRecordManager")) {
+                        if (tkey.startsWith("com.tcl.tworking.service.impl.xxxRecordManager")) {
                             redisUtil.set(tkey, tvalue, xxxRecordManagerTime);
-                        } else if (tkey.startsWith("com.service.impl.xxxSetRecordManager")) {
+                        } else if (tkey.startsWith("com.tcl.tworking.service.impl.xxxSetRecordManager")) {
                             redisUtil.set(tkey, tvalue, xxxSetRecordManagerTime);
                         } else {
                             redisUtil.set(tkey, tvalue, defaultCacheExpireTime);
