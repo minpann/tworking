@@ -1,49 +1,68 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.tcl.tworking</groupId>
-  <artifactId>tworking</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>tworking-common</module>
-  	<module>tworking-persistence</module>
-  	<module>tworking-biz</module>
-  	<module>tworking-admin</module>
-  	<module>tworking-webapp</module>
-  </modules>
-  
-  	<dependencyManagement>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.tcl.tworking</groupId>
+	<artifactId>tworking</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>tworking-common</module>
+		<module>tworking-persistence</module>
+		<module>tworking-biz</module>
+		<module>tworking-admin</module>
+		<module>tworking-webapp</module>
+	</modules>
+
+	<properties>
+		<!-- spring版本号 -->
+		<spring.version>4.2.0.RELEASE</spring.version>
+		<!-- log4j日志文件管理包版本 -->
+		<slf4j.version>1.7.12</slf4j.version>
+		<log4j.version>1.2.12</log4j.version>
+		<!-- junit版本号 -->
+		<junit.version>4.10</junit.version>
+		<!-- mybatis版本号 -->
+		<mybatis.version>3.4.0</mybatis.version>
+	</properties>
+
+	<dependencyManagement>
 		<dependencies>
+			<!-- spring -->
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webmvc</artifactId>
-				<version>4.2.0.RELEASE</version>
+				<version>${spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-tx</artifactId>
-				<version>4.2.0.RELEASE</version>
+				<version>${spring.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-jdbc</artifactId>
-				<version>4.2.0.RELEASE</version>
+				<version>${spring.version}</version>
 			</dependency>
+
+			<!-- mybatis -->
 			<dependency>
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis</artifactId>
-				<version>3.4.0</version>
+				<version>${mybatis.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.mybatis</groupId>
 				<artifactId>mybatis-spring</artifactId>
 				<version>1.3.0</version>
 			</dependency>
+
+			<!-- mysql -->
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
 				<version>5.1.38</version>
 			</dependency>
+
+			<!-- alibaba-json -->
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>fastjson</artifactId>
@@ -54,6 +73,8 @@
 				<artifactId>c3p0</artifactId>
 				<version>0.9.1.2</version>
 			</dependency>
+
+			<!-- common -->
 			<dependency>
 				<groupId>commons-collections</groupId>
 				<artifactId>commons-collections</artifactId>
@@ -74,11 +95,8 @@
 				<artifactId>servlet-api</artifactId>
 				<version>2.5</version>
 			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>1.7.12</version>
-			</dependency>
+
+			<!-- test -->
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-core</artifactId>
@@ -89,6 +107,35 @@
 				<artifactId>logback-classic</artifactId>
 				<version>1.1.2</version>
 			</dependency>
+
+			<!--单元测试依赖 -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- 日志文件管理包 -->
+			<!-- log start -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<!-- log end -->
+
+			<!-- project related-->
 			<dependency>
 				<groupId>com.tcl.tworking</groupId>
 				<artifactId>tworking-common</artifactId>
@@ -104,10 +151,22 @@
 				<artifactId>tworking-biz</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+
+			<!-- redis -->
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>1.6.1.RELEASE</version>
+			</dependency>
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>2.7.3</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
-		<build>
+
+	<build>
 		<defaultGoal>clean install</defaultGoal>
 		<plugins>
 			<!-- 编译插件版本和指定强制JDK版本 -->
@@ -121,7 +180,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>

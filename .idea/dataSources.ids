@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="localhost-tworking" uuid="6edb85e1-7f60-4d31-99f4-e3289429a71a">
-    <database-info product="MySQL" version="5.6.20-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.30 ( Revision: alexander.soklakov@oracle.com-20140310090514-8xt1yoht5ksg2e7c )">
+    <database-info product="MySQL" version="5.7.15-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
-    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
-      <schema id="1" name="tworking"/>
-      <table id="2" parent="1" name="example"/>
-      <column id="3" parent="2" name="id">
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="tworking">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="information_schema"/>
+      <schema id="3" name="mysql"/>
+      <schema id="4" name="performance_schema"/>
+      <schema id="5" name="ssm"/>
+      <schema id="6" name="sys"/>
+      <schema id="7" name="taotao"/>
+      <table id="8" parent="1" name="user"/>
+      <column id="9" parent="8" name="id">
         <mandatory>1</mandatory>
-        <data-type>int(20)</data-type>
+        <data-type>int(20)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="4" parent="2" name="username">
+      <column id="10" parent="8" name="username">
         <comment>用户名</comment>
-        <data-type>varchar(64)</data-type>
+        <data-type>varchar(64)|0</data-type>
       </column>
-      <column id="5" parent="2" name="address">
+      <column id="11" parent="8" name="address">
         <comment>地址</comment>
-        <data-type>varchar(64)</data-type>
+        <data-type>varchar(64)|0</data-type>
       </column>
-      <column id="6" parent="2" name="description">
+      <column id="12" parent="8" name="description">
         <comment>描述</comment>
-        <data-type>varchar(64)</data-type>
+        <data-type>varchar(64)|0</data-type>
       </column>
-      <key id="7" parent="2" name="PRIMARY">
+      <key id="13" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
