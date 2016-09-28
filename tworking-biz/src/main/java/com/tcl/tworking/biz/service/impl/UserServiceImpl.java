@@ -1,18 +1,17 @@
 package com.tcl.tworking.biz.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.tcl.tworking.biz.service.UserService;
 import com.tcl.tworking.persistence.dao.UserDao;
 import com.tcl.tworking.persistence.model.User;
+import org.springframework.stereotype.Service;
 
-@Service("exampleService")
+import javax.annotation.Resource;
+import java.util.List;
+
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
-	@Autowired
+	@Resource
 	private UserDao userDao;
 	
 	@Override

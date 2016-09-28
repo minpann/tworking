@@ -12,5 +12,10 @@
   		<groupId>com.tcl.tworking</groupId>
   		<artifactId>tworking-persistence</artifactId>
   	</dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <scope>test</scope>
+      </dependency>
   </dependencies>
 </project>
