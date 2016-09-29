@@ -3,9 +3,7 @@ package com.tcl.tworking.biz.service.common;
 import org.junit.Test;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -88,12 +86,8 @@ public class RedisServiceTest extends AbstractBaseServiceTest {
     @Test
     public void testHash(){
 
-        String key = "testHashKey";
-        Map<String, String> contentMap = new HashMap<>();
-
-        contentMap.put("key1", "value1");
-        contentMap.put("key2", null);
-
-        redisService.putAllForHash(key, contentMap);
+        String key = "redis:test";
+        String hashKey = "stuId";
+        redisService.putForHash(key,hashKey,"wangming");
     }
 }
