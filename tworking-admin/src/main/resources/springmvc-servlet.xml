@@ -5,9 +5,6 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
-	<!--&lt;!&ndash; 设置占位符替换配置 &ndash;&gt;-->
-	<context:property-placeholder location="classpath:*.properties" />
-
 	<!-- 把标记了@Controller注解的类转换为bean -->
 	<context:component-scan base-package="com.tcl.tworking.admin.controller" />
 
@@ -36,7 +33,5 @@
 			<property name="prefix" value="/WEB-INF/view/" />
 			<property name="suffix" value=".jsp" />
 	</bean>
-	
-	<!-- 引入各依赖工程配置 -->
-	<import resource="classpath*:applicationContext-biz.xml"/>
+
 </beans>
