@@ -54,7 +54,7 @@
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context-support</artifactId>
-				<version>${springframework}</version>
+				<version>${spring.version}</version>
 			</dependency>
 
 			<!-- mybatis -->
