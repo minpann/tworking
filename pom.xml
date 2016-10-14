@@ -10,6 +10,7 @@
 		<module>tworking-biz</module>
 		<module>tworking-admin</module>
 		<module>tworking-webapp</module>
+		<module>tworking-batch</module>
 	</modules>
 
 	<properties>
@@ -215,28 +216,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<profiles>
-		<profile>
-			<id>dev</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<enviroment>src/main/profiles/dev</enviroment>
-			</properties>
-		</profile>
-		<profile>
-			<id>test</id>
-			<properties>
-				<enviroment>src/main/profiles/test</enviroment>
-			</properties>
-		</profile>
-		<profile>
-			<id>pro</id>
-			<properties>
-				<enviroment>src/main/profiles/pro</enviroment>
-			</properties>
-		</profile>
-	</profiles>
 </project>

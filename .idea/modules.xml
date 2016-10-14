@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/tworking.iml" filepath="$PROJECT_DIR$/tworking.iml" />
       <module fileurl="file://$PROJECT_DIR$/tworking-admin/tworking-admin.iml" filepath="$PROJECT_DIR$/tworking-admin/tworking-admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tworking-batch/tworking-batch.iml" filepath="$PROJECT_DIR$/tworking-batch/tworking-batch.iml" />
       <module fileurl="file://$PROJECT_DIR$/tworking-biz/tworking-biz.iml" filepath="$PROJECT_DIR$/tworking-biz/tworking-biz.iml" />
       <module fileurl="file://$PROJECT_DIR$/tworking-common/tworking-common.iml" filepath="$PROJECT_DIR$/tworking-common/tworking-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/tworking-persistence/tworking-persistence.iml" filepath="$PROJECT_DIR$/tworking-persistence/tworking-persistence.iml" />

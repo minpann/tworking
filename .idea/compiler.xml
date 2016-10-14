@@ -23,6 +23,8 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="tworking-admin" />
+        <module name="tworking-batch" />
+        <module name="tworking-bbb" />
         <module name="tworking-biz" />
         <module name="tworking-common" />
         <module name="tworking-persistence" />
@@ -30,8 +32,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="twording-bb" target="1.7" />
       <module name="tworking" target="1.7" />
       <module name="tworking-admin" target="1.7" />
+      <module name="tworking-batch" target="1.7" />
+      <module name="tworking-bbb" target="1.7" />
       <module name="tworking-biz" target="1.7" />
       <module name="tworking-common" target="1.7" />
       <module name="tworking-persistence" target="1.7" />
