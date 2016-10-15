@@ -15,22 +15,7 @@
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/tworking-admin" />
-    <file type="web" url="file://$PROJECT_DIR$/tworking-b" />
-    <file type="web" url="file://$PROJECT_DIR$/tworking-b" />
     <file type="web" url="file://$PROJECT_DIR$/tworking-webapp" />
-  </component>
-  <component name="MavenProjectsManager">
-    <option name="originalFiles">
-      <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-      </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/twording-bb/pom.xml" />
-        <option value="$PROJECT_DIR$/tworking-batch/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
