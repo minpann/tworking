@@ -28,6 +28,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/tworking-batch/pom.xml" />
+        <option value="$PROJECT_DIR$/tworking-bb/pom.xml" />
       </set>
     </option>
   </component>
