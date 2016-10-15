@@ -25,6 +25,7 @@
         <module name="tworking-admin" />
         <module name="tworking-biz" />
         <module name="tworking-common" />
+        <module name="tworking-job" />
         <module name="tworking-persistence" />
         <module name="tworking-webapp" />
       </profile>
@@ -34,6 +35,7 @@
       <module name="tworking-admin" target="1.7" />
       <module name="tworking-biz" target="1.7" />
       <module name="tworking-common" target="1.7" />
+      <module name="tworking-job" target="1.7" />
       <module name="tworking-persistence" target="1.7" />
       <module name="tworking-webapp" target="1.7" />
     </bytecodeTargetLevel>

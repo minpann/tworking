@@ -10,6 +10,7 @@
 		<module>tworking-biz</module>
 		<module>tworking-admin</module>
 		<module>tworking-webapp</module>
+		<module>tworking-job</module>
 	</modules>
 
 	<properties>
