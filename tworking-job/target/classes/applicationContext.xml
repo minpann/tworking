@@ -10,5 +10,6 @@
 
     <import resource="classpath*:applicationContext-biz.xml"/>
     <import resource="applicationContext-mq.xml" />
+    <import resource="applicationContext-job.xml"/>
 
 </beans>
