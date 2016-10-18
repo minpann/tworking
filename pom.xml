@@ -22,9 +22,9 @@
 		<!-- junit版本号 -->
 		<junit.version>4.12</junit.version>
 		<!-- mybatis版本号 -->
-		<mybatis.version>3.4.0</mybatis.version>
+		<mybatis.version>3.4.1</mybatis.version>
 		<!-- activemq版本号 -->
-		<activemq.version>5.14.1</activemq.version>
+		<activemq.version>5.14.0</activemq.version>
 	</properties>
 
 	<dependencyManagement>
