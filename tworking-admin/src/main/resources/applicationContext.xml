@@ -9,6 +9,4 @@
     <context:property-placeholder location="classpath:serverConfig.properties" />
 
     <import resource="classpath*:applicationContext-biz.xml" />
-    <!--<import resource="applicationContext-mq.xml" />-->
-
 </beans>
