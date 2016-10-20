@@ -5,6 +5,9 @@
         				http://www.springframework.org/schema/beans/spring-beans.xsd
         				http://www.springframework.org/schema/context
         				http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- 引入各依赖工程配置 -->
+	<import resource="classpath*:applicationContext-persistence.xml" />
+
 	<context:annotation-config />
 	<context:component-scan base-package="com.tcl.tworking.biz.service" />
 
@@ -28,6 +31,4 @@
 		<property name="connectionFactory" ref="jedisConnectionFactory" />
 	</bean>
 
-	<!-- 引入各依赖工程配置 -->
-	<import resource="classpath*:applicationContext-persistence.xml" />
 </beans>
