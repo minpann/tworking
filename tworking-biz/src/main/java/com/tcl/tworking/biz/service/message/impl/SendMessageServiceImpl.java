@@ -62,10 +62,18 @@ public class SendMessageServiceImpl implements SendMessageService {
         sendMessage(tworkingDest,jsonMessage);
     }
 
+
+    public JmsTemplate getJmsTemplate() {
+        return jmsTemplate;
+    }
+
     public void setJmsTemplate(JmsTemplate jmsTemplate) {
         this.jmsTemplate = jmsTemplate;
     }
 
+    public ActiveMQQueue getTworkingDest() {
+        return tworkingDest;
+    }
     public void setTworkingDest(ActiveMQQueue tworkingDest) {
         this.tworkingDest = tworkingDest;
     }
