@@ -26,24 +26,12 @@
 </bean>
 <!-- 调度的配置结束 -->
 
-<!-- OverTimeProcessJob -->
-<bean id="overTimeProcessJobDetail"
-      class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
-      p:name="overTimeProcessJob" p:targetBeanName="overTimeProcessJob"
-      p:targetMethod="doWork">
-</bean>
-<bean id="overTimeProcessJobTrigger"
-      class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
-      p:jobDetail-ref="overTimeProcessJobDetail" p:cronExpression="0 0/5 * * * ? *">
-</bean>
-
 <!-- 启动触发器的配置开始 -->
 <bean id="schedulerFactory"
       class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
     <property name="triggers">
         <list>
             <ref bean="SendMessageInfoJobTrigger" />
-            <ref bean="overTimeProcessJobTrigger"/>
         </list>
     </property>
 </bean>
