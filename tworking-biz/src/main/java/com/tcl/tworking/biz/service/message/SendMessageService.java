@@ -1,4 +1,4 @@
-package com.tcl.tworking.biz.service.impl;
+package com.tcl.tworking.biz.service.message;
 
 import org.apache.activemq.command.ActiveMQQueue;
 

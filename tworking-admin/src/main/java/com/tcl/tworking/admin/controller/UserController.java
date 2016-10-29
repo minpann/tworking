@@ -2,7 +2,7 @@ package com.tcl.tworking.admin.controller;
 
 import com.tcl.mie.vo.response.ListResponse;
 import com.tcl.mie.vo.response.ResponseBuilder;
-import com.tcl.tworking.biz.service.UserService;
+import com.tcl.tworking.biz.service.user.UserService;
 import com.tcl.tworking.persistence.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,6 +1,6 @@
-package com.tcl.tworking.biz.service.impl;
+package com.tcl.tworking.biz.service.user.impl;
 
-import com.tcl.tworking.biz.service.UserService;
+import com.tcl.tworking.biz.service.user.UserService;
 import com.tcl.tworking.persistence.dao.UserDao;
 import com.tcl.tworking.persistence.model.User;
 import org.springframework.stereotype.Service;

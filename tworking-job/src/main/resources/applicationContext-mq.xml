@@ -18,7 +18,7 @@
     <bean id="tworkingDest" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg value="${mq.tworking.queue}" />
     </bean>
-    <bean id="tworkingMessageSender" class="com.tcl.tworking.biz.service.impl.SendMessageServiceImpl">
+    <bean id="tworkingMessageSender" class="com.tcl.tworking.biz.service.message.impl.SendMessageServiceImpl">
         <property name="jmsTemplate" ref="jmsTemplate" />
         <property name="tworkingDest" ref="tworkingDest" />
     </bean>
