@@ -1,8 +1,9 @@
 package com.tcl.tworking.biz.service.message.impl;
 
-import com.alibaba.fastjson.JSON;
-import com.tcl.tworking.biz.service.message.SendMessageService;
-import com.tcl.tworking.common.vo.MessageInfo;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+
 import org.apache.activemq.command.ActiveMQQueue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,10 +12,9 @@ import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.Session;
+import com.alibaba.fastjson.JSON;
+import com.tcl.tworking.biz.service.message.SendMessageService;
+import com.tcl.tworking.common.vo.MessageInfo;
 
 /**
  * Created by panmin on 16-10-18.
