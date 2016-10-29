@@ -8,7 +8,7 @@
     <bean id="producerConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
         <property name="connectionFactory">
             <bean class="org.apache.activemq.ActiveMQConnectionFactory">
-                <property name="brokerURL" value="${tworkintg.mq.url}" />
+                <property name="brokerURL" value="${tworking.mq.url}" />
             </bean>
         </property>
     </bean>
@@ -16,7 +16,7 @@
         <property name="connectionFactory" ref="producerConnectionFactory" />
     </bean>
     <bean id="tworkingDest" class="org.apache.activemq.command.ActiveMQQueue">
-        <constructor-arg value="${mq.wemedia.tstream.queue}" />
+        <constructor-arg value="${mq.tworking.queue}" />
     </bean>
     <bean id="tworkingMessageSender" class="com.tcl.tworking.biz.service.impl.SendMessageServiceImpl">
         <property name="jmsTemplate" ref="jmsTemplate" />
@@ -27,7 +27,7 @@
     <bean id="tworkingConnectionFactory" class="org.apache.activemq.pool.PooledConnectionFactory">
         <property name="connectionFactory">
             <bean class="org.apache.activemq.ActiveMQConnectionFactory">
-                <property name="brokerURL" value="${spider.mq.url}" />
+                <property name="brokerURL" value="${tworking.mq.url}" />
             </bean>
         </property>
     </bean>
