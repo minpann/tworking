@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.alibaba.fastjson.JSON;
@@ -19,7 +18,6 @@ import com.tcl.tworking.common.vo.MessageInfo;
 /**
  * Created by panmin on 16-10-18.
  */
-@Service
 public class SendMessageServiceImpl implements SendMessageService {
     private static final Logger logger = LoggerFactory.getLogger(SendMessageServiceImpl.class);
 

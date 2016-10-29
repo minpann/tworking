@@ -15,14 +15,14 @@
 <bean id="SendMessageInfoJobDetail"
       class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"
       p:name="SendMessageInfoJob" p:targetBeanName="SendMessageInfoJob"
-      p:targetMethod="sendMassageInfo">
+      p:targetMethod="sendMessageInfo">
 </bean>
 <!-- job的配置结束 -->
 
 <!-- 调度的配置开始 -->
 <bean id="SendMessageInfoJobTrigger"
       class="org.springframework.scheduling.quartz.CronTriggerFactoryBean"
-      p:jobDetail-ref="SendMessageInfoJobDetail" p:cronExpression="0 */30 * * * ?"><!--Cron表达式“10 */1 * * * ?”意为：从10秒开始，每30分钟执行一次。  -->
+      p:jobDetail-ref="SendMessageInfoJobDetail" p:cronExpression="*/5 * * * * ?"><!--Cron表达式“10 */1 * * * ?”意为：从10秒开始，每30分钟执行一次。  -->
 </bean>
 <!-- 调度的配置结束 -->
 
