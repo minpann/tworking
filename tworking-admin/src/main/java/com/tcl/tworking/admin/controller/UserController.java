@@ -18,7 +18,7 @@ public class UserController {
 
 	private static Logger LOG = LoggerFactory.getLogger(UserController.class);
 
-	@Resource
+	@Resource(name="userService")
 	private UserService userService;
 	
 	@RequestMapping(value = "/user/list")
