@@ -2,19 +2,51 @@
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:noNamespaceSchemaLocation="http://www.padual.com/java/logback.xsd">
 
+    <property name="logDir" value="/data/log/tomcat/tworking" />
+
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{0}:%line - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${catalina.base}/tworkinglogs/tworkinglog.log</file>
+    <appender name="jobDetailAppenderFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logDir}/jobDetail.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>tworkinglog.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <fileNamePattern>${logDir}/jobDetail.log.%d{yyyy-MM-dd}</fileNamePattern>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{0}:%line - %msg%n</pattern>
+            <pattern>%date{yyyyMMdd HH:mm:ss.SSS} %X{invokeNo} %X{operateNo} [%thread] %-5level  %logger{0}:%line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="jobAppenderFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logDir}/job.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logDir}/job.log.%d{yyyy-MM-dd}</fileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date{yyyyMMdd HH:mm:ss.SSS} %X{invokeNo} [%thread] %-5level  %logger{0}:%line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="messageMqAppenderFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logDir}/mq.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logDir}/mq.log.%d{yyyy-MM-dd}</fileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date{yyyyMMdd HH:mm:ss.SSS} %X{invokeNo} [%thread] %-5level  %logger{0}:%line - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="messageNewsFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logDir}/messages.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logDir}/messages.log.%d{yyyy-MM-dd}</fileNamePattern>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%msg%n</pattern>
         </encoder>
     </appender>
 
