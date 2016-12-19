@@ -256,4 +256,28 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<enviroment>profiles/dev</enviroment>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<enviroment>profiles/test</enviroment>
+			</properties>
+		</profile>
+		<profile>
+			<id>pro</id>
+			<properties>
+				<enviroment>profiles/pro</enviroment>
+			</properties>
+		</profile>
+	</profiles>
 </project>
